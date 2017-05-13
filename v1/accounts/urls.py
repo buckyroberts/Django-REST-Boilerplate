@@ -1,9 +1,10 @@
 from django.conf.urls import url
-from .views.test import hello
+from .views.user import UserView
 
 
 urlpatterns = [
 
-    url(r'^hello$', hello),
+    # Users
+    url(r'^users$', UserView.as_view()),
 
 ]

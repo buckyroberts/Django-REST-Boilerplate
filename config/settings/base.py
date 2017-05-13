@@ -21,6 +21,9 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
 
+    # API (v1)
+    'v1.accounts.apps.AccountsConfig',
+
 ]
 
 ROOT_URLCONF = 'config.urls'

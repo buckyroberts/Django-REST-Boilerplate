@@ -2,11 +2,12 @@ import os
 
 
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
-SECRET_KEY = 'tz^#rz9l6l4q==l(u9_)!8fvq1tv&mjs-tggujtedyet)a_xk-'
-
-ALLOWED_HOSTS = []
+SECRET_KEY = '7(ci5&0hu2r5-5@d$)j(9yssw$6+-4t!d4rp=#k&_3)4z-bm07'
 
 INSTALLED_APPS = [
+
+    # API (v1)
+    'v1.accounts.apps.AccountsConfig',
 
     # Base
     'django.contrib.admin',
@@ -21,13 +22,10 @@ INSTALLED_APPS = [
     'rest_framework',
     'rest_framework.authtoken',
 
-    # API (v1)
-    'v1.accounts.apps.AccountsConfig',
-
 ]
 
-ROOT_URLCONF = 'config.urls'
-WSGI_APPLICATION = 'config.wsgi.application'
+ALLOWED_HOSTS = []
+AUTH_USER_MODEL = 'accounts.User'
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -39,6 +37,9 @@ MIDDLEWARE_CLASSES = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 ]
+
+ROOT_URLCONF = 'config.urls'
+WSGI_APPLICATION = 'config.wsgi.application'
 
 AUTH_PASSWORD_VALIDATORS = [
     {'NAME': 'django.contrib.auth.password_validation.UserAttributeSimilarityValidator', },
